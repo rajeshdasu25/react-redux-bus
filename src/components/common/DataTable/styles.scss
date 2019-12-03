@@ -1,0 +1,48 @@
+.expandableTableContainer {
+    margin: 1rem 0;
+
+    .seats-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        background: #edecec;
+        border-left: 1rem solid black;
+        padding: 1rem;
+        margin: 1rem;
+    }
+    .seat {
+        background-color: #f1f1f1;
+        border: 1px solid;
+        width: 100px;
+        margin: 10px;
+        text-align: center;
+        font-size: 30px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    .seat-legend {
+        padding: 4px;
+        width: 50%;
+        text-align: center;
+    }
+    .seat.red, .seat-legend.red {
+        background-color: red;
+    }
+    .seat.green, .seat-legend.green {
+        background-color: green;
+    }
+    .seat[disabled] {
+        pointer-events: none;
+        opacity: 0.5;
+        &:hover {
+            cursor: none;
+        }
+    }
+    .break {
+        width: 100%;
+    }
+    .legend-row {
+        margin: 2px 0;
+    }
+}

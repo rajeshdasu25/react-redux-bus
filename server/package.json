@@ -1,0 +1,18 @@
+{
+    "name": "react-bus-search",
+    "version": "1.0.0",
+    "description": "Node server for React Bus Search",
+    "keywords": [],
+    "author": "Rajesh Kumar",
+    "license": "ISC",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "latest",
+        "fs": "0.0.1-security",
+        "ip": "^1.1.5"
+    }
+}
