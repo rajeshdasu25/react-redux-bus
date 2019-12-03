@@ -4,7 +4,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-### `npm run dependencies`
+### `npm i`
+
+### `cd server && npm i`
 
 ### `npm run dev`
 

@@ -23,20 +23,6 @@ app.use(function (req, res, next) {
 // Serve the static files from the React app
 app.use(express.static(path.join(__dirname, 'client/build')));
 
-function jsonReader(filePath, cb) {
-    fs.readFile(filePath, (err, fileData) => {
-        if (err) {
-            return cb && cb(err)
-        }
-        try {
-            const object = JSON.parse(fileData)
-            return cb && cb(null, object)
-        } catch (err) {
-            return cb && cb(err)
-        }
-    })
-}
-
 app.get('/ping', function (req, res) {
     res.setHeader('Content-Type', 'application/json');
     var responseData = {
@@ -54,12 +40,13 @@ app.get('/ping', function (req, res) {
 app.post('/getAllBuses', (req, res) => { 
     let busFrom = req.query.from;
     let busTo = req.query.to;
+    let jDate = req.query.jDate;
     let jsonUrl = './data/buses.json';
 
     fs.readFile(jsonUrl, (err, data) => {
         if (err) throw err;
         let buses = JSON.parse(data);
-        let items = buses.filter(bus => bus.fromId == parseInt(busFrom) && bus.toId == parseInt(busTo));
+        let items = buses.filter(bus => bus.fromId == parseInt(busFrom) && bus.toId == parseInt(busTo) && bus.jDate == jDate);
         res.json(items);
     });
 });

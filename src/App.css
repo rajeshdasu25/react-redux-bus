@@ -73,3 +73,7 @@ footer {
   overflow: hidden;
 }
 /* Card box styles */
+
+.btn-group-sm>.btn, .btn-sm {
+  font-size: .750rem;
+}
